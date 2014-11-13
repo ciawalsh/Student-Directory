@@ -15,7 +15,7 @@ def print_header
 end
 
 def print_names(students)
-	students.each { |student| print "#{student[:name]}, #{student[:cohort]} cohort\n" }
+	students.each_with_index { |student, n| print "#{n+1}. #{student[:name]}, #{student[:cohort]} cohort\n" }
 end
 
 def print_footer(names)
