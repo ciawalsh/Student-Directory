@@ -9,3 +9,7 @@ puts "The Alien"
 puts "Terminator"
 puts "Freddie Kruger"
 puts "The Joker"
+
+print "Overall, we have "
+print 9
+puts " great students."
