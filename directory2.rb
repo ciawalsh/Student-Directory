@@ -11,15 +11,17 @@ def input_students
 end
 
 def print_header
-	print "The students at my cohort of Makers Academy are...\n-------------------\n"
+	print "The students that begin with the letter 'A' at my cohort of Makers Academy are...\n-------------------\n"
 end
 
 def print_names(students)
-	students.each_with_index { |student, n| print "#{n+1}. #{student[:name]}, #{student[:cohort]} cohort\n" }
+	students.each_with_index { |student, n| 
+			print "#{n+1}. #{student[:name]}, #{student[:cohort]} cohort\n" if student[:name][0] == "A"
+	}
 end
 
 def print_footer(names)
-	print "Overall, we have #{names.length} great students.\n"
+	print "Otherwise, overall, we have #{names.length} great students.\n"
 end
 
 students = input_students
