@@ -10,9 +10,19 @@ students = [
 	"The Joker"
 ]
 
-puts "The students at my cohort of Makers Academy are..."
-puts "-------------------"
+def print_header
+	puts "The students at my cohort of Makers Academy are..."
+	puts "-------------------"
+end
 
-students.each { |student| puts student }
+def print(names)
+	names.each { |name| puts name }
+end
 
-print "Overall, we have #{students.lenth} great students."
+def print_footer(names)
+	puts "Overall, we have #{names.length} great students."
+end
+
+print_header
+print(students)
+print_footer(students)
