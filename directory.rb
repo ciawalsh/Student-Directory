@@ -16,16 +16,18 @@ def input_students
 end
 
 def print_header
-	puts "The students at my cohort of Makers Academy are..."
-	puts "-------------------"
+	puts "The students at my cohort of Makers Academy are...".center(75)
+	puts "------------------------".center(75)
 end
 
 def print(students)
-	students.each_with_index { |student, n| puts "#{n+1}. #{student[:name]}, #{student[:cob]}, #{student[:hobby]}, #{student[:cohort]} cohort." }
+	students.each_with_index { |student, n| puts "#{n+1}. #{student[:name]}, #{student[:cob]}, #{student[:hobby]}, #{student[:cohort]} cohort.".center(75) }
 end
 
 def print_footer(students)
-	puts "Overall, we have #{students.length} great students."
+	puts "------------------------".center(75)
+	puts "Overall, we have #{students.length} great students.".center(75)
+	puts " "
 end
 
 students = input_students
