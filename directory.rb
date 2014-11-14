@@ -1,14 +1,18 @@
 def input_students
-	puts "Please enter the names of students"
-	puts "To finish, just hit return twice"
-	students = []
+	puts "Please enter the some info about the students..."
+	puts "To continue, enter a name, or to finish, just hit return twice"
+	@students = []
 	name = gets.chomp
 	while !name.empty? do
-		students << {:name => name, :cohort => :december}
-		puts "Now we have #{students.length} students"
+		puts "What's a hobby of #{name}?"
+		hobby = gets.chomp.capitalize!
+		puts "Where was #{name} born?"
+		country_of_birth = gets.chomp.capitalize!
+		@students << {:name => name, :hobby => hobby, :cob => country_of_birth, :cohort => :December}
+		puts "Now we have #{@students.length} student(s). Please enter another name, or, hit return to finish."
 		name = gets.chomp
 	end
-	students
+	@students
 end
 
 def print_header
@@ -17,11 +21,11 @@ def print_header
 end
 
 def print(students)
-	students.each { |student| puts "#{student[:name]}, #{student[:cohort]} cohort" }
+	students.each_with_index { |student, n| puts "#{n+1}. #{student[:name]}, #{student[:cob]}, #{student[:hobby]}, #{student[:cohort]} cohort." }
 end
 
-def print_footer(names)
-	puts "Overall, we have #{names.length} great students."
+def print_footer(students)
+	puts "Overall, we have #{students.length} great students."
 end
 
 students = input_students
