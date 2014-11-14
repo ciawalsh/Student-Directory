@@ -11,17 +11,20 @@ def input_students
 end
 
 def print_header
-	print "The students that have names under 12 characters at my cohort of Makers Academy are...\n-------------------\n"
+	print "The students that are at my cohort of Makers Academy are...\n-------------------\n"
 end
 
 def print_names(students)
-	students.each_with_index { |student, n| 
-			print "#{n+1}. #{student[:name]}, #{student[:cohort]} cohort\n" if student[:name].length < 12
-	}
+n = 0
+	while n < students.length
+		student = students[n]
+		print "#{n+1}. #{student[:name]}, #{student[:cohort]} cohort\n" 
+		n += 1
+	end
 end
 
 def print_footer(names)
-	print "Otherwise, overall, we have #{names.length} great students.\n"
+	print "Overall, we have #{names.length} great students.\n"
 end
 
 students = input_students
